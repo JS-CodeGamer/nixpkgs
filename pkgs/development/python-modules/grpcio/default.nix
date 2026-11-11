@@ -30,7 +30,7 @@ buildPythonPackage rec {
 
   postPatch = ''
     substituteInPlace pyproject.toml \
-      --replace-fail cython==3.1.1 cython
+      --replace-fail Cython~=3.2 cython
   '';
 
   outputs = [
