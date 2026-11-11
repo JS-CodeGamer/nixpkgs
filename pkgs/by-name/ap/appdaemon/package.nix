@@ -17,6 +17,10 @@ python3Packages.buildPythonApplication (finalAttrs: {
     hash = "sha256-GoKYaMCwfZ8tKsyrNDQN5OeptkAuct90ziXO9MxU2FA=";
   };
 
+  postPatch = ''
+    sed -Ei 's/(uv_build)[<>=!~][^"]*/\1/' pyproject.toml
+  '';
+
   nativeBuildInputs = [
     python3Packages.pyprojectVersionPatchHook
   ];
